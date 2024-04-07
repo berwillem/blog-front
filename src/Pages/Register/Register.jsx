@@ -1,7 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Register.css";
+import { Link } from "react-router-dom";
 const Register = () => {
-  return <div>register</div>;
+  const [email, setEmail] = useState("");
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  const handlsubmit = (e) => {
+    e.preventDefault();
+    console.log(email);
+    console.log(password);
+  };
+  return (
+    <div>
+      <form onSubmit={(e) => handlsubmit(e)}>
+        <input
+          type="text"
+          placeholder="enter your username"
+          onChange={(e) => setUserName(e.target.value)}
+        />
+        <input
+          type="email"
+          placeholder="enter your email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="enteryour password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit">login</button>
+      </form>
+      <p>
+        Already have an acount? Login now : <Link to="/Login">Login</Link>
+      </p>
+    </div>
+  );
 };
 
 export default Register;
