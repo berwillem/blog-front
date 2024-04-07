@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import axios from "axios";
+import { useState } from "react";
 import "./Register.css";
 import { Link } from "react-router-dom";
 const Register = () => {
@@ -7,8 +8,13 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const handlsubmit = (e) => {
     e.preventDefault();
-    console.log(email);
-    console.log(password);
+    axios
+      .post("http://localhost:5000/users/register", {
+        email,
+        username: userName,
+        password,
+      })
+      .then(console.log("test")).catch(err=>alert(err.message))
   };
   return (
     <div>
