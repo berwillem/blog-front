@@ -10,7 +10,7 @@ const Login = () => {
     console.log(password);
   };
   return (
-    <div className="container">
+    <div className="container-login">
       <form onSubmit={(e) => handlsubmit(e)}>
         <h1>Login</h1>
         <div className="input-container">

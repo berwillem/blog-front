@@ -21,7 +21,7 @@ const Register = () => {
       .catch((err) => alert(err.message));
   };
   return (
-    <div className="container">
+    <div className="container-register">
       <form onSubmit={(e) => handlsubmit(e)}>
       <h1>Register</h1>
         <div className="input-container">
