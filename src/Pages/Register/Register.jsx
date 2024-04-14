@@ -6,6 +6,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  // test de staging
   const handlsubmit = (e) => {
     e.preventDefault();
     axios
