@@ -7,7 +7,7 @@ const Register = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const handlsubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault();;ùdo
     axios
       .post("http://localhost:5000/users/register", {
         email,
