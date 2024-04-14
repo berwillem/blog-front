@@ -8,7 +8,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   // test de staging
   const handlsubmit = (e) => {
-    e.preventDefault();  
+    e.preventDefault();
     // this is some change
     e.preventDefault();
     axios
@@ -21,24 +21,29 @@ const Register = () => {
       .catch((err) => alert(err.message));
   };
   return (
-    <div>
+    <div className="container">
       <form onSubmit={(e) => handlsubmit(e)}>
-        <input
-          type="text"
-          placeholder="enter your username"
-          onChange={(e) => setUserName(e.target.value)}
-        />
+      <h1>Register</h1>
+        <div className="input-container">
+          <input
+            type="text"
+            placeholder="enter your username"
+            onChange={(e) => setUserName(e.target.value)}
+          />
+        </div>
+        <div className="input-container">
         <input
           type="email"
           placeholder="enter your email"
           onChange={(e) => setEmail(e.target.value)}
-        />
+        /></div>
+        <div className="input-container">
         <input
           type="password"
           placeholder="enteryour password"
           onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">login</button>
+        /></div>
+        <button className="btn" type="submit">login</button>
       </form>
       <p>
         Already have an acount? Login now : <Link to="/Login">Login</Link>
