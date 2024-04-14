@@ -12,8 +12,10 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import logo from "../../assets/blog.png";
 import "./Navbar.css";
+import { Link } from "react-router-dom"
 
 const pages = ["Home", "About", "login"];
+const routes = ["/","/about","/Login"]
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -25,6 +27,8 @@ function ResponsiveAppBar() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+
+  
 
   return (
     <AppBar position="static">
@@ -60,10 +64,14 @@ function ResponsiveAppBar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
+              {pages.map((page, index) => (
+                <Link key={page} to={routes[index]}>
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  
                   <Typography textAlign="center">{page}</Typography>
+                  
                 </MenuItem>
+                </Link>
               ))}
             </Menu>
           </Box>
@@ -87,7 +95,8 @@ function ResponsiveAppBar() {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {pages.map((page, index) => (
+              <Link key={page} to={routes[index]}>
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
@@ -95,6 +104,7 @@ function ResponsiveAppBar() {
               >
                 {page}
               </Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>
