@@ -7,14 +7,15 @@ const Register = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const handlsubmit = (e) => {
-    e.preventDefault();;ùdo
+    e.preventDefault();
     axios
       .post("http://localhost:5000/users/register", {
         email,
         username: userName,
         password,
       })
-      .then(console.log("test")).catch(err=>alert(err.message))
+      .then(console.log("test"))
+      .catch((err) => alert(err.message));
   };
   return (
     <div>
