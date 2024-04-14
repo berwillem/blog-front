@@ -9,13 +9,15 @@ const Register = () => {
   const handlsubmit = (e) => {
     e.preventDefault();  
     // this is some change
+    e.preventDefault();
     axios
       .post("http://localhost:5000/users/register", {
         email,
         username: userName,
         password,
       })
-      .then(console.log("test")).catch(err=>alert(err.message))
+      .then(console.log("test"))
+      .catch((err) => alert(err.message));
   };
   return (
     <div>
