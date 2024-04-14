@@ -10,19 +10,23 @@ const Login = () => {
     console.log(password);
   };
   return (
-    <div>
+    <div className="container">
       <form onSubmit={(e) => handlsubmit(e)}>
-        <input
+        <h1>Login</h1>
+        <div className="input-container">
+        <input 
           type="email"
           placeholder="enter your email"
           onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
+        /></div>
+        <div className="input-container">
+        <input className="input-container"
           type="password"
           placeholder="enteryour password"
           onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">login</button>
+        /></div>
+    
+        <button className="btn" type="submit">login</button>
       </form>
       <p>
         not Registred yet? register now : <Link to="/Register">Register</Link>
