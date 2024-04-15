@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
@@ -8,11 +9,13 @@ const Login = () => {
   const [error, setError] = useState("");
   const handlsubmit = (e) => {
     e.preventDefault();
+
     axios
       .post("http://localhost:5000/users/login", { email, password })
       .then((res) => console.log(res.data))
       .catch((err) => setError(err.response.data));
   };
+
   return (
     <div className="container-login">
       <form onSubmit={(e) => handlsubmit(e)}>
