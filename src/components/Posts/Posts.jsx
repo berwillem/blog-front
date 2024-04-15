@@ -9,7 +9,7 @@ import { CardActionArea } from "@mui/material";
 const Posts = () => {
   return (
     <div className="posts">
-        <div className="post">
+        <div className="post" id="1">
       <Card sx={{ maxWidth: 345 }}>
         <CardActionArea>
           <CardMedia
@@ -31,7 +31,7 @@ const Posts = () => {
       </Card>
       </div>
 
-      <div className="post">
+      <div className="post" id="2">
       <Card sx={{ maxWidth: 345 }}>
         <CardActionArea>
           <CardMedia
@@ -53,7 +53,7 @@ const Posts = () => {
       </Card>
       </div>
 
-      <div className="post">
+      <div className="post" id="3">
       <Card sx={{ maxWidth: 345 }}>
         <CardActionArea>
           <CardMedia
