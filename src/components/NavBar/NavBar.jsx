@@ -12,10 +12,10 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import logo from "../../assets/blog.png";
 import "./Navbar.css";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const pages = ["Home", "About", "login"];
-const routes = ["/","/about","/Login"]
+const routes = ["/", "/about", "/Login"];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -28,11 +28,9 @@ function ResponsiveAppBar() {
     setAnchorElNav(null);
   };
 
-  
-
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" className="nav">
         <Toolbar disableGutters>
           <img src={logo} alt="logo" className="logo" />
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -66,11 +64,9 @@ function ResponsiveAppBar() {
             >
               {pages.map((page, index) => (
                 <Link key={page} to={routes[index]}>
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  
-                  <Typography textAlign="center">{page}</Typography>
-                  
-                </MenuItem>
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">{page}</Typography>
+                  </MenuItem>
                 </Link>
               ))}
             </Menu>
@@ -97,13 +93,13 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page, index) => (
               <Link key={page} to={routes[index]}>
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page}
+                </Button>
               </Link>
             ))}
           </Box>
