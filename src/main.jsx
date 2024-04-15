@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Register from "./Pages/Register/Register.jsx";
 import Login from "./Pages/Login/Login.jsx";
+import SideMenuAdmin from "./components/SideMenuAdmin/SideMenuAdmin.jsx";
 
 const router = createBrowserRouter([
   {
