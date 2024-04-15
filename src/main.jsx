@@ -9,6 +9,7 @@ import Register from "./Pages/Register/Register.jsx";
 import Login from "./Pages/Login/Login.jsx";
 import Notfound from "./Pages/notfound/Notfound.jsx";
 import Post from "./Pages/Post/Post.jsx";
+import Admin from "./Pages/Admin/Admin.jsx";
 
 
 const router = createBrowserRouter([
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
      {
     path: "*",
     element: <Notfound />,
+  },
+  {
+    path: "/Admin",
+    element: <Admin />,
   },
 ]);
 
