@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Admin.css";
-import { Link } from "react-router-dom";
 import SideMenuAdmin from "../../components/SideMenuAdmin/SideMenuAdmin";
+import axios from "axios";
 
 function Admin() {
   const [username, setUsername] = useState("");
@@ -14,8 +14,6 @@ function Admin() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submitted:", { username, password });
-
     setUsername("");
     setPassword("");
   };
