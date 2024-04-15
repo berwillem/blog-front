@@ -9,22 +9,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 350px;
-  width: 400px;
+  width: 100%;
   background-color: #9787c3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
 }
 h1 {
-  color: #b3a0ea;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
 }
+
 .input-container {
   margin-bottom: 10px;
 }
@@ -34,6 +31,10 @@ h1 {
 }
 .btn {
   color: #ffffff;
-  background-color: #c7a2ec;
-  border: #c7a2ec;
+  background-color: #831ee7 !important;
+  padding: 10px;
+  border-radius: 10px;
+}
+.error {
+  color: tomato;
 }

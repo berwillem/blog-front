@@ -23,7 +23,7 @@ const Register = () => {
   return (
     <div className="container-register">
       <form onSubmit={(e) => handlsubmit(e)}>
-      <h1>Register</h1>
+        <h1>Register</h1>
         <div className="input-container">
           <input
             type="text"
@@ -32,18 +32,22 @@ const Register = () => {
           />
         </div>
         <div className="input-container">
-        <input
-          type="email"
-          placeholder="enter your email"
-          onChange={(e) => setEmail(e.target.value)}
-        /></div>
+          <input
+            type="email"
+            placeholder="enter your email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
         <div className="input-container">
-        <input
-          type="password"
-          placeholder="enteryour password"
-          onChange={(e) => setPassword(e.target.value)}
-        /></div>
-        <button className="btn" type="submit">login</button>
+          <input
+            type="password"
+            placeholder="enteryour password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <button className="btn" type="submit">
+          Register
+        </button>
       </form>
       <p>
         Already have an acount? Login now : <Link to="/Login">Login</Link>
