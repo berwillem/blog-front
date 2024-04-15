@@ -10,6 +10,7 @@ import Login from "./Pages/Login/Login.jsx";
 import SideMenuAdmin from "./components/SideMenuAdmin/SideMenuAdmin.jsx";
 import Notfound from "./Pages/notfound/Notfound.jsx";
 import Post from "./Pages/Post/Post.jsx";
+import Admin from "./Pages/Admin/Admin.jsx";
 
 
 
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
      {
     path: "*",
     element: <Notfound />,
+  },
+  {
+    path: "/Admin",
+    element: <Admin />,
   },
 ]);
 
