@@ -12,6 +12,7 @@ import Notfound from "./Pages/notfound/Notfound.jsx";
 import Post from "./Pages/Post/Post.jsx";
 import Admin from "./Pages/Admin/Admin.jsx";
 import About from "./Pages/About/About.jsx";
+import PostsPage from "./Pages/PostsPage/PostsPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,17 @@ const router = createBrowserRouter([
     path: "/Admin",
     element: <Admin />,
   },
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "Posts/:PostsId",
+        element: <PostsPage />,
+      },
+    ],
+  },
+  
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
