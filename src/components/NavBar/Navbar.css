@@ -1,7 +1,9 @@
-.logo {
-  height: 50px;
-  border-radius: 10px;
+
+.logo{
+    height: 50px;
+    border-radius: 10px;
 }
-.nav {
-  background-color: rgb(255, 221, 126);
+a{
+    text-decoration: none;
 }
+
