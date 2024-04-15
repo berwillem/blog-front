@@ -44,16 +44,9 @@ const router = createBrowserRouter([
     element: <Admin />,
   },
   {
-    path: "/",
-    element: <App />,
-    children: [
-      {
-        path: "Posts/:PostsId",
-        element: <PostsPage />,
-      },
-    ],
+    path: "/post/:postid",
+    element: <PostsPage />,
   },
-  
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

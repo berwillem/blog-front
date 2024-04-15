@@ -4,76 +4,52 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
-
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { CiHeart } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 const Posts = () => {
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/posts/")
+      .then((res) => setPosts(res.data))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <div className="posts">
-        <div className="post" id="1">
-      <Card sx={{ maxWidth: 345 }}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            height="140"
-            image="/src/assets/image.png"
-            alt="green iguana"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Lizard
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
-      </div>
-
-      <div className="post" id="2">
-      <Card sx={{ maxWidth: 345 }}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            height="140"
-            image="/src/assets/image.png"
-            alt="green iguana"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Lizard
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
-      </div>
-
-      <div className="post" id="3">
-      <Card sx={{ maxWidth: 345 }}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            height="140"
-            image="/src/assets/image.png"
-            alt="green iguana"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Lizard
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
-      </div>
+      {posts?.map((post) => (
+        <div className="post">
+          {" "}
+          <Link to={`/post/${post._id}`}>
+            <Card sx={{ maxWidth: 345 }}>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  height="140"
+                  image="/src/assets/image.png"
+                  alt="green iguana"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    {post.title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {post.text}
+                  </Typography>
+                  {post.likes}
+                  <CiHeart
+                    className="icon-heart"
+                    onClick={() => handlelikepost(post._id)}
+                  />
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          </Link>
+        </div>
+      ))}
     </div>
   );
 };

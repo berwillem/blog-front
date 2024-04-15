@@ -1,10 +1,16 @@
-.posts{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px;
-    flex-wrap: wrap;
+.posts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  flex-wrap: wrap;
 }
-.post{
-    margin: 10px;
+.post {
+  margin: 10px;
+}
+.icon-heart {
+  font-size: 40px;
+}
+.icon-heart:hover {
+  color: red;
 }

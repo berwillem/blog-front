@@ -1,11 +1,5 @@
-
-
 const PostsPage = () => {
-    return (
-        <div>
-           Poste Page 
-        </div>
-    );
+  return <div>Poste Page</div>;
 };
 
 export default PostsPage;
