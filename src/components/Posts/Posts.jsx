@@ -33,6 +33,9 @@ const Posts = () => {
                   alt="green iguana"
                 />
                 <CardContent>
+                  {post.images.map((image) => (
+                    <img key={image} src={image} alt="Post" />
+                  ))}
                   <Typography gutterBottom variant="h5" component="div">
                     {post.title}
                   </Typography>
