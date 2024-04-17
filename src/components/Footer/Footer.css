@@ -1,6 +1,6 @@
 .TermsAndPolicy {
   background-color: rgba(0, 0, 0, 0.882);
-  margin-top: 22%;
+  margin-top: 50%;
   height: 40px;
   display: flex;
   justify-content: space-between;
@@ -8,13 +8,13 @@
   padding: 0px 50px;
   gap: 100px;
 }
-.TermsAndPolicy a{
+.TermsAndPolicy a {
   color: white;
   text-decoration: none;
   font-size: 14px;
   font-weight: bold;
 }
-.Terms{
+.Terms {
   color: white;
   text-decoration: none;
   font-size: 14px;

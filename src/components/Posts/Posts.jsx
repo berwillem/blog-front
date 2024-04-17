@@ -40,14 +40,14 @@ const Posts = () => {
                     {post.text}
                   </Typography>
                   {post.likes}
-                  <CiHeart
-                    className="icon-heart"
-                    onClick={() => handlelikepost(post._id)}
-                  />
                 </CardContent>
               </CardActionArea>
             </Card>
           </Link>
+          <CiHeart
+            className="icon-heart"
+            onClick={() => handlelikepost(post._id)}
+          />
         </div>
       ))}
     </div>
